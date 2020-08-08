@@ -1,0 +1,44 @@
+yarn init -y
+    - Iniciar o package.json
+
+yarn add typescript -D 
+    - Adicionar o typescript
+
+yarn tsc --init
+    - Criar o arquivo de configuração do typescript
+
+yarn add ts-node-dev -D
+    - Adicionar um refresh automático (uma espécie de Nodemon)
+
+
+Criar um script no package.json com o conteúdo:
+    - "start": "ts-node-dev src/server.ts"
+        - ou "start": "tsnd src/server.ts"
+    - adicionar a flag --transpile-only:
+        - ele só transpila e não verifica os erros, acelerando o processo
+    - adicionar a flag --ignore-watch node_modules:
+        - não tenta fazer conversões da pasta node_modules
+    - adicionar a flag --respawn:
+        - mantém a aplicação em execução com refresh automático
+
+yarn add express
+    - Adiciona o express, para lidar com rotas
+
+
+Corpo (Request Body): Dados para criação ou atualização de um registro
+Route Params: Identificar qual recurso eu quero atualizar ou deletar
+    - acesso: request.params 
+    - adicionar um : (dois pontos) à url para usar
+Query Params: Paginação, filtros, ordenação
+    - acesso: request.query 
+    - adicionar um ? (interrogação) à url para usar
+
+
+BANCO:
+    - yarn add knex sqlite3
+    - migrations: git dos bancos de dados
+
+
+yarn add cors 
+    - permite que aplicações em endereços diferentes acessem a API (que está em localhost:3333). Como por exemplo, o front-end (localhost:3000)
+
